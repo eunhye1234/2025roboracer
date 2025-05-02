@@ -34,10 +34,8 @@ else:
 
 ################################################################################
 
-# CONTROLLER = ['GapFollower']
 CONTROLLER = ['TinyLidarNet']
 RACETRACK = 'Spielberg'
-# RACETRACK = 'ICRA'
 VISUALIZE = False
 
 lidar_data = None  # Initialize it with a default value
@@ -45,18 +43,13 @@ speed_data = 0
 
 def lidar_callback(msg):
     """store lidar data"""
-    # print(" lidar_callback triggered")
     global lidar_data
     lidar_data = np.array(msg.ranges, dtype=np.float32)
-    # print(f"lidar_data: {lidar_data}")
-    # print("------------------------------")
 
 def speed_callback(msg):
     """store speed data"""
     global speed_data
     speed_data = msg.data
-    print(f"speed_data: {speed_data}")
-    # print("------------------------------")
 
 # Get keyboard key
 def get_key(settings):
@@ -105,9 +98,7 @@ def main():
     
 
     test_id = "benchmark_tiny_il_m"
-    # print(test_id)
     
-    # controller = TinyLidarNet(test_id,2, 0,'/home/ccri-batch2-car3/TinyLidarNet/Benchmark/f1tenth_benchmarks/zarrar/f1_tenth_model_small_noquantized.tflite')
     controller = TinyLidarNet(test_id,2, 0,'/home/autodrive_devkit/src/autodrive_devkit/autodrive_roboracer/TinyLidarNet/f1_tenth_model_small_noquantized.tflite')
     
     try:
@@ -127,22 +118,14 @@ def main():
 
             elif key == '\x03': # CTRL+C
                 break
-
-            # print("run1")
-            # print(f"lidar_data type: {type(lidar_data)}")
-            # print("sub lidar data:", lidar_data)
+                
             # re-plan trajectory
-            # print("run2")
             steering, desired_speed = controller.plan(lidar_data)
-            print(f"steering, speed: {steering, desired_speed}")
-            
+
             current_speed = speed_data
             # gain = 1.0
             gain = 0.5
             throttle = (desired_speed - current_speed) * gain
-            print(f"throttle: {throttle}")
-            print("------------------------------")
-
             
             # Generate control messages
             throttle_msg.data = float(throttle)
