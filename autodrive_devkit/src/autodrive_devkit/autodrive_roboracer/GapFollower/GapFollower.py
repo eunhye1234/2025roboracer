@@ -5,32 +5,17 @@ from .process_lidar_data import process_lidar_data
 class GapFollower:
     """class representing the gap follower motion planner"""
 
-    # def __init__(self, params, settings):
     def __init__(self, settings):
         """class constructor"""
 
         # store algorithm settings and car parameter
         settings['STRAIGHTS_STEERING_ANGLE'] = np.deg2rad(settings['STRAIGHTS_STEERING_ANGLE'])
         self.settings = settings
-        # self.params = params
         self.radians_per_elem = None
         self.long_straight_cnt = 0
 
-        # # initialize fake map for lidar scan simulation
-        # if settings['FAKE_MAP'] == "":
-        #     self.fake_map_simulator = None
-        # else:
-        #     self.fake_map_simulator = FakeMapSimulator(settings['FAKE_MAP'])
-
-    # def plan(self, x, y, theta, v, scans):
     def plan(self, scans):
         """compute control inputs"""
-
-        # # potentially get LiDAR scan from fake map
-        # if not self.fake_map_simulator is None:
-        #     tmp = self.fake_map_simulator.get_scan(x, y, theta, scans)
-        #     if max(tmp) > 0:
-        #         scans = tmp
 
         # # eliminate all points inside 'bubble' (set them to zero)
         proc_ranges = self.preprocess_lidar(scans)
@@ -51,7 +36,6 @@ class GapFollower:
 
         # select speed
         steering_angle = self.get_angle(best, len(proc_ranges))
-        #
 
         if abs(steering_angle) > self.settings['STRAIGHTS_STEERING_ANGLE']:
             speed = self.settings['CORNERS_SPEED']
@@ -68,15 +52,10 @@ class GapFollower:
                 speed = self.settings['STRAIGHTS_SPEED']
                 self.long_straight_cnt = 0
 
-        # if self.settings['ADAPTIVE_CRUISE_CONTROL']:
-        #     speed = adaptive_cruise_control(scans, speed, self.params['width'])
-
         # visualized the planned trajectory
         if self.settings['VISUALIZE']:
             self.visualization(scans, gap_start, gap_end, best, speed)
-        print("==================================")
-        print(f"plan's speed, steering_angle: {speed, steering_angle}")
-        # return np.array([speed, steering_angle])
+
         return speed, steering_angle
 
     def preprocess_lidar(self, ranges):
