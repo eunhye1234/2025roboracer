@@ -68,7 +68,7 @@ def main():
     # ROS 2 infrastructure
     rclpy.init()
     qos = QoSProfile(depth=1)
-    node = rclpy.create_node('joydata')
+    node = rclpy.create_node('gapfollower')
 
     sub_speed = node.create_subscription(Float32, '/autodrive/roboracer_1/speed', speed_callback, qos)
     sub_lidar = node.create_subscription(LaserScan, '/autodrive/roboracer_1/lidar', lidar_callback, qos_profile_sensor_data)
