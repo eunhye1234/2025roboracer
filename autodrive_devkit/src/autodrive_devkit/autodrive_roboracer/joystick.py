@@ -24,14 +24,9 @@ steering_data = 0
 
 def joy_callback(msg):
     """store joy data"""
-    # print(" lidar_callback triggered")
     global accel_data, steering_data
-    print("run1")
     accel_data = msg.drive.acceleration
     steering_data = msg.drive.steering_angle
-    print("run2")
-    # print(f"lidar_data: {lidar_data}")
-    # print("------------------------------")
 
 # Get keyboard key
 def get_key(settings):
@@ -87,18 +82,9 @@ def main():
 
             elif key == '\x03': # CTRL+C
                 break
-
-            # print("run1")
-            # print(f"lidar_data type: {type(lidar_data)}")
-            # print("sub lidar data:", lidar_data)
-            # re-plan trajectory
-            # print("run2")
             
             steering = steering_data
             throttle = accel_data
-
-            print(f"throttle, steering: {throttle, steering}")
-            print("------------------------------")
 
             
             # Generate control messages
