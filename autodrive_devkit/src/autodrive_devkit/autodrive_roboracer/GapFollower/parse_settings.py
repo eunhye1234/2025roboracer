@@ -11,24 +11,13 @@ def parse_settings(algorithm, racetrack, visualize):
     """parse the algorithm settings defined by the user"""
 
     # load settings file
-    # dirpath = dirname(dirname(abspath(__file__)))
-
-    # path = dirpath + '/racetracks/' + racetrack + '/settings/' + algorithm + '.cfg'
-    # path_config = dirpath + '/settings/' + algorithm + '.cfg'
-    # path = dirpath + '/GapFollower/' + algorithm + '.cfg'
-
     config_dir = os.path.join(
         get_package_share_directory('autodrive_roboracer'),
         'config'
     )
     path = os.path.join(config_dir, f'{algorithm}.cfg')
     path_config = os.path.join(config_dir, f'{algorithm}_config.cfg')
-    print('-----------------------------')
-    print(path)
-    # path_config = dirpath + '/GapFollower/' + algorithm + '_config' + '.cfg'
-    # path_config = f"{dirpath}{algorithm}_config.cfg"
-    # path_config = os.path.join(dirpath, algorithm + '_config.cfg')
-    print(path_config)
+
     if not exists(path_config):
         msg = 'File /settings/%s.cfg defining the valid algorithm settings is missing for this algorithm!' % algorithm
         raise Exception(msg)
