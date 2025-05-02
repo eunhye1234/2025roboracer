@@ -52,7 +52,7 @@ def main():
     # ROS 2 infrastructure
     rclpy.init()
     qos = QoSProfile(depth=1)
-    node = rclpy.create_node('joydata')
+    node = rclpy.create_node('joystick')
 
     sub_speed = node.create_subscription(AckermannDriveStamped, '/input/teleop', joy_callback, qos)
 
