@@ -1,7 +1,6 @@
 import time
 import numpy as np
 from numba import njit
-# from .BasePlanner import BasePlanner
 from .BasePlanner import BasePlanner
 import tensorflow as tf
 
@@ -101,13 +100,8 @@ class TinyLidarNet(BasePlanner):
                 return np.array([0,2])
             self.temp_scan.append(scans)
             scans = np.array(self.temp_scan)
-            # print("Shape of scans:", scans.shape)
             scans = np.expand_dims(scans, axis=0).astype(np.float32)
-            # print("Shape of scans:", scans.shape)
             scans = np.transpose(scans, (0, 2, 1))
-            # print("Shape of scans:", scans.shape)
-            # scans = np.expand_dims(scans, axis=-1).astype(np.float32)
-            # scans = np.expand_dims(scans, axis=0)
             self.interpreter.set_tensor(self.input_index, scans)
             
             start_time = time.time()
@@ -129,19 +123,14 @@ class TinyLidarNet(BasePlanner):
             scans = np.array(scans)
             scans[scans>10] = 10
             input_shape = self.interpreter.get_input_details()[0]['shape']
-            # print("Input shape:", input_shape)
-            # print("Shape of scans:", scans.shape)
-            # print("Shape of self.temp_scan:", [s.shape for s in self.temp_scan])
 
             if(len(self.temp_scan) <3):
                 self.temp_scan.append(scans)
                 return np.array([0,2])
             self.temp_scan.append(scans)
             scans = np.array(self.temp_scan)
-            # print("Shape of scans:", scans.shape)
             scans = np.expand_dims(scans, axis=-1).astype(np.float32)
             scans = np.expand_dims(scans, axis=0).astype(np.float32)
-            # print("Shape of scans:", scans.shape)
             self.interpreter.set_tensor(self.input_index, scans)
             
             start_time = time.time()
