@@ -6,7 +6,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 
 ---
 
-## 🧩 Dependencies
+## Dependencies
 
 - **OS**: Ubuntu 22.04
 - **Python**: 3.10.12
@@ -14,7 +14,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 - **TensorFlow**: 2.16.1
 - **CUDA**: 12.4
 
-> 💡 **Check NVIDIA Driver**:  
+>  **Check NVIDIA Driver**:  
 > Run `nvidia-smi` to check your GPU status.  
 > If nothing shows up:
 > ```bash
@@ -23,7 +23,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Pull and Run AutoDRIVE Simulator
 
@@ -51,18 +51,21 @@ docker run --name autodrive_roboracer_sim -it \
 ```
 
 ### 2. Pull and Run AutoDRIVE Devkit Container
-Repeat the above steps, replacing `autodrive_roboracer_sim` with `autodrive_roboracer_api` and using the appropriate image tag for the Devkit.
+Repeat the steps above with:
+  - Container name: `autodrive_roboracer_api`
 
 ## Running the System
-### 1. Launch WebSocket-ROS2 Bridge
+## WebSocket–ROS2 Bridge
+### Terminal 1: Launch the Bridge
 In the **Devkit Container:**
 ``` bash
 cd /home/autodrive_devkit
 ros2 launch autodrive_roboracer bringup_graphics.launch.py
 ```
-This bridge facilitates bidirectional communication between WebSocket and ROS 2, enabling real-time control and monitoring of AutoDrive Simulator vehicles by transmitting and receiving sensor and vehicle state data.
+This bridge facilitates bidirectional communication between WebSocket and ROS 2, enabling real-time control and monitoring of AutoDrive Simulator vehicles by exchanging sensor and vehicle state data.
 
-### 2. Start the AutoDRIVE Simulator
+## Run the Simulator
+### Terminal 2: Start the AutoDRIVE Simulator
 In the **Simulator Container:**
 ``` bash
 cd /home/autodrive_simulator
@@ -71,8 +74,10 @@ cd /home/autodrive_simulator
 In the GUI:
 - Click the **"Disconnected"** button to connect (status changes to **"Connected"**).
 - The simulator supports two modes:
-  - **Autonomous Mode**: Controlled via ROS 2 nodes publishing to `/steering_command` and `/throttle_command`.
-  - **Manual Mode**: Controlled manually using the keyboard within the simulator GUI.
+  - **Autonomous Mode**: Controlled via ROS2 nodes publishing to `/steering_command` and `/throttle_command`.
+  - **Manual Mode**:
+    - Controlled manually using the keyboard within the simulator GUI.
+    - No ROS 2 input needed
 
 ## Autonomous Mode: Running Control Nodes
 In the **Devkit Container**, you can run various nodes to control the vehicle:
