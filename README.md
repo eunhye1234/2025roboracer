@@ -2,7 +2,7 @@
 
 This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025** competition.
 
-🔗 [Competition Website](https://autodrive-ecosystem.github.io/competitions/roboracer-sim-racing-icra-2025/#resources)
+[Competition Website](https://autodrive-ecosystem.github.io/competitions/roboracer-sim-racing-icra-2025/#resources)
 
 ---
 
@@ -94,6 +94,7 @@ In the **Devkit Container**, you can run various nodes to control the vehicle:
   ros2 run autodrive_roboracer joystick
   ```
   - **TinyLidarNet (Neural Network Model)**:
+    [TinyLidarNet](CSL-KU/TinyLidarNet)
   ```bash
   ros2 run autodrive_roboracer tinylidar
   ```
