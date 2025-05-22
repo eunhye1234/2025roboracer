@@ -95,6 +95,8 @@ In the GUI:
     - Controlled manually using the keyboard within the simulator GUI.
     - No ROS 2 input needed
 
+### (3) Run the Controller
+### Terminal 3: Start the Control Nodes
 ### Autonomous Mode: Running Control Nodes
 In the **Devkit Container**, you can run various nodes to control the vehicle:
   - **Keyboard Teleoperation**:
