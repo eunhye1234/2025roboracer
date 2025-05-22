@@ -108,6 +108,7 @@ In the **Devkit Container**, you can run various nodes to control the vehicle:
   ros2 run autodrive_roboracer gapfollower
   ```
   - **Joystick Control**:
+    The joystick node is currently under development and not fully functional yet
   ```bash
   ros2 run autodrive_roboracer joystick
   ```
