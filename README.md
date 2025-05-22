@@ -56,7 +56,7 @@ Repeat the steps above with:
   - Container name: `autodrive_roboracer_api`
 
 ## Running the System
-## WebSocket–ROS2 Bridge
+### (1) WebSocket–ROS2 Bridge
 ### Terminal 1: Launch the Bridge
 In the **Devkit Container:**
 ``` bash
@@ -65,7 +65,7 @@ ros2 launch autodrive_roboracer bringup_graphics.launch.py
 ```
 This bridge facilitates bidirectional communication between WebSocket and ROS 2, enabling real-time control and monitoring of AutoDrive Simulator vehicles by exchanging sensor and vehicle state data.
 
-## Run the Simulator
+### (2) Run the Simulator
 ### Terminal 2: Start the AutoDRIVE Simulator
 In the **Simulator Container:**
 ``` bash
@@ -80,7 +80,7 @@ In the GUI:
     - Controlled manually using the keyboard within the simulator GUI.
     - No ROS 2 input needed
 
-## Autonomous Mode: Running Control Nodes
+### Autonomous Mode: Running Control Nodes
 In the **Devkit Container**, you can run various nodes to control the vehicle:
   - **Keyboard Teleoperation**:
   ```bash
@@ -110,7 +110,7 @@ In the **Devkit Container**, you can run various nodes to control the vehicle:
   ```bash
   pip install -r requirements.txt
   ```
-## Manual Mode
+### Manual Mode
 In Manual Mode, control the vehicle directly using the keyboard within the simulator GUI. No additional ROS 2 nodes are required.
 
 ##
