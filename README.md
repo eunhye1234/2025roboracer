@@ -97,7 +97,7 @@ In the GUI:
 
 ### (3) Run the Controller
 ### Terminal 3: Start the Control Nodes
-### Autonomous Mode: Running Control Nodes
+### 3.1 Autonomous Mode: Running Control Nodes
 In the **Devkit Container**, you can run various nodes to control the vehicle:
   - **Keyboard Teleoperation**:
   ```bash
@@ -127,7 +127,7 @@ In the **Devkit Container**, you can run various nodes to control the vehicle:
   ```bash
   pip install -r requirements.txt
   ```
-### Manual Mode
+### 3.2 Manual Mode
 In Manual Mode, control the vehicle directly using the keyboard within the simulator GUI. No additional ROS 2 nodes are required.
 
 ##
