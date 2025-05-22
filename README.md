@@ -6,6 +6,17 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 
 ---
 
+## Directory Structure
+- devkit/
+    - Based on the files provided by the competition organizers.
+    - Some files have been modified or added for customization.
+
+- sim/
+    - Contains simulator-related files from the competition.
+    Note: Not all original files are included in this repository.
+    Please refer to the official competition source to obtain the complete simulator files if needed.
+---
+
 ## Dependencies
 
 - **OS**: Ubuntu 22.04
