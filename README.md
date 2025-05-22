@@ -67,6 +67,10 @@ This bridge facilitates bidirectional communication between WebSocket and ROS 2,
 
 ### (2) Run the Simulator
 ### Terminal 2: Start the AutoDRIVE Simulator
+Create a new terminal
+```bash
+docker exec -it autodrive_roboracer_sim /bin/bash
+```
 In the **Simulator Container:**
 ``` bash
 cd /home/autodrive_simulator
