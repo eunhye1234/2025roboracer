@@ -62,9 +62,13 @@ docker run --name autodrive_roboracer_sim -it \
   autodriveecosystem/autodrive_roboracer_sim:2025-icra-practice
 ```
 
+
+
+
 ### 2. Pull and Run AutoDRIVE Devkit Container
 Repeat the steps above with:
   - Container name: `autodrive_roboracer_api`
+
 
 ## Running the System
 ### (1) WebSocket–ROS2 Bridge
@@ -75,6 +79,7 @@ cd /home/autodrive_devkit
 ros2 launch autodrive_roboracer bringup_graphics.launch.py
 ```
 This bridge facilitates bidirectional communication between WebSocket and ROS 2, enabling real-time control and monitoring of AutoDrive Simulator vehicles by exchanging sensor and vehicle state data.
+
 
 ### (2) Run the Simulator
 ### Terminal 2: Start the AutoDRIVE Simulator
@@ -94,6 +99,7 @@ In the GUI:
   - **Manual Mode**:
     - Controlled manually using the keyboard within the simulator GUI.
     - No ROS 2 input needed
+
 
 ### (3) Run the Controller
 ### Terminal 3: Start the Control Nodes
@@ -128,6 +134,7 @@ In the **Devkit Container**, you can run various nodes to control the vehicle:
   ```bash
   pip install -r requirements.txt
   ```
+
 ### 3.2 Manual Mode
 In Manual Mode, control the vehicle directly using the keyboard within the simulator GUI. No additional ROS 2 nodes are required.
 
