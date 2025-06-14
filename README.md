@@ -73,7 +73,7 @@ Repeat the steps above with:
 
 ## [Running the System]
 ### (1) WebSocket–ROS2 Bridge
-### Terminal 1: Launch the Bridge
+### - Terminal 1: Launch the Bridge
 In the **Devkit Container:**
 ``` bash
 cd /home/autodrive_devkit
@@ -83,7 +83,7 @@ This bridge facilitates bidirectional communication between WebSocket and ROS 2,
 <br>
 
 ### (2) Run the Simulator
-### Terminal 2: Start the AutoDRIVE Simulator
+### - Terminal 2: Start the AutoDRIVE Simulator
 Create a new terminal
 ```bash
 docker exec -it autodrive_roboracer_sim /bin/bash
@@ -103,7 +103,7 @@ In the GUI:
 <br>
 
 ### (3) Run the Controller
-### Terminal 3: Start the Control Nodes
+### - Terminal 3: Start the Control Nodes
 ### 3.1 Autonomous Mode: Running Control Nodes
 In the **Devkit Container**, you can run various nodes to control the vehicle:
   - **Keyboard Teleoperation**:
