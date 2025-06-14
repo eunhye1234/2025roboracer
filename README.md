@@ -34,6 +34,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 
 This command will automatically detect your GPU and install the recommended driver version for your system.
 ---
+<br>
 
 ## Setup Instructions
 
@@ -63,12 +64,13 @@ docker run --name autodrive_roboracer_sim -it \
 ```
 
 
-
+<br><br>
 
 ### 2. Pull and Run AutoDRIVE Devkit Container
 Repeat the steps above with:
   - Container name: `autodrive_roboracer_api`
 
+<br>
 
 ## Running the System
 ### (1) WebSocket–ROS2 Bridge
@@ -79,7 +81,7 @@ cd /home/autodrive_devkit
 ros2 launch autodrive_roboracer bringup_graphics.launch.py
 ```
 This bridge facilitates bidirectional communication between WebSocket and ROS 2, enabling real-time control and monitoring of AutoDrive Simulator vehicles by exchanging sensor and vehicle state data.
-
+<br>
 
 ### (2) Run the Simulator
 ### Terminal 2: Start the AutoDRIVE Simulator
@@ -99,7 +101,7 @@ In the GUI:
   - **Manual Mode**:
     - Controlled manually using the keyboard within the simulator GUI.
     - No ROS 2 input needed
-
+<br>
 
 ### (3) Run the Controller
 ### Terminal 3: Start the Control Nodes
@@ -134,6 +136,7 @@ In the **Devkit Container**, you can run various nodes to control the vehicle:
   ```bash
   pip install -r requirements.txt
   ```
+<br>
 
 ### 3.2 Manual Mode
 In Manual Mode, control the vehicle directly using the keyboard within the simulator GUI. No additional ROS 2 nodes are required.
