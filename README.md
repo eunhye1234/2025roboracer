@@ -32,7 +32,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 > sudo ubuntu-drivers autoinstall
 > ```
 
-###This command will automatically detect your GPU and install the recommended driver version for your system.
+- This command will automatically detect your GPU and install the recommended driver version for your system.
 ---
 <br>
 
