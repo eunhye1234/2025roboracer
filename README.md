@@ -6,7 +6,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 
 ---
 
-## Directory Structure
+## [Directory Structure]
 - autodrive_devkit/src
     - Based on the files provided by the competition organizers.
     - Some files have been modified or added for customization.
@@ -17,7 +17,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
     Please refer to the official competition source to obtain the complete simulator files if needed.**
 ---
 
-## Dependencies
+## [Dependencies]
 
 - **OS**: Ubuntu 22.04
 - **Python**: 3.10.12
@@ -32,7 +32,7 @@ This repository contains code for the **RoboRacer Sim Racing League @ ICRA 2025*
 > sudo ubuntu-drivers autoinstall
 > ```
 
-This command will automatically detect your GPU and install the recommended driver version for your system.
+###This command will automatically detect your GPU and install the recommended driver version for your system.
 ---
 <br>
 
