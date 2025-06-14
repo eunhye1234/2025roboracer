@@ -36,7 +36,7 @@ This command will automatically detect your GPU and install the recommended driv
 ---
 <br>
 
-## Setup Instructions
+## [Setup Instructions]
 
 ### 1. Pull and Run AutoDRIVE Simulator
 
@@ -63,16 +63,15 @@ docker run --name autodrive_roboracer_sim -it \
   autodriveecosystem/autodrive_roboracer_sim:2025-icra-practice
 ```
 
-
-<br><br>
+<br>
 
 ### 2. Pull and Run AutoDRIVE Devkit Container
 Repeat the steps above with:
   - Container name: `autodrive_roboracer_api`
 
-<br>
+<br><br>
 
-## Running the System
+## [Running the System]
 ### (1) WebSocket–ROS2 Bridge
 ### Terminal 1: Launch the Bridge
 In the **Devkit Container:**
